@@ -1,7 +1,5 @@
 // Calculate sum
-const sum = (num1, num2, num3) => {
-  return num = (num1 || 0) + (num2 || null) + (num3 || null);
-}
+const sum = (...nums) => nums.reduce((pv, cv) => pv + cv, 0); 
 
 // export sum function
 module.exports = sum;
