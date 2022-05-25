@@ -1,4 +1,4 @@
-const say = require("./say");
+const say = require("../say");
 
 // Testing function
 test("Say test message", () => {
