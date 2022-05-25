@@ -1,0 +1,18 @@
+{
+  "name": "learn-unit-test",
+  "version": "1.0.0",
+  "description": "learning unit testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jagu-ms/learn-unit-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
