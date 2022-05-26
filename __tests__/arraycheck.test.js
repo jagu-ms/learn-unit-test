@@ -120,3 +120,23 @@ expect.extend({
 it("Check if the expected value is bigger", () => {
   expect(22).toBeBetween(21,23);
 });
+
+// expect.anything() => it expects anything except the Undefined and Null values
+it("Expect anything", () => {
+  let x = 2;
+  expect("mohamed").toEqual(expect.anything());
+  expect(1).toEqual(expect.anything());
+  expect([1, 2, 3, 4, 5]).toEqual(expect.anything());
+  expect(x).toEqual(expect.anything());
+})
+
+// expect.any(constructor)
+it("Expect any constructer", () => {
+  expect("mohamed").toEqual(expect.any(String/* if Number! the test will failed */))
+})
+
+// expect.arrayContaining(constructor)
+it("Expect subarray to be in the main array", () => {
+  let myArray = [1, 2, 3, 4];
+  expect(myArray).toEqual(expect.arrayContaining([1, 3]))
+})
