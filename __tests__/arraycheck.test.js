@@ -77,3 +77,46 @@ it("Check for property inside Object", () => {
   };
   expect(myObject).toHaveProperty("name", "mohamed")
 })
+
+// Creating my own matcher
+expect.extend({
+  toBeBiggerThan(rv, cv) {
+    const pass = rv > cv;
+    if (pass) {
+      return {
+        message: () => `The expected ${rv} is bigger than ${cv}`,
+        pass: true
+      }
+    } else {
+      return {
+        message: () => `The expected ${rv} is smaller than ${cv}`,
+        pass: false
+      }
+    }
+  }
+});
+
+it("Check if the expected value is bigger", () => {
+  expect(22).toBeBiggerThan(21);
+});
+
+expect.extend({
+  toBeBetween(received, start, end) {
+    const pass = received > start && received < end;
+    if (pass) {
+      return {
+        message: () => `The expected ${received} is between ${start} and ${end}`,
+        pass: true
+      }
+    } else {
+      return {
+        message: () => `The expected ${received} is not between ${start} and ${end}`,
+        pass: false
+      }
+    }
+  }
+});
+
+it("Check if the expected value is bigger", () => {
+  expect(22).toBeBetween(21,23);
+});
