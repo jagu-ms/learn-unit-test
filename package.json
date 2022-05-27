@@ -14,5 +14,12 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^28.1.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": ["html"],
+    "coverageDirectory": "reports",
+    "collectCoverageFrom": ["**/*.{js,jsx,ts}"],
+    "coveragePathIgnorePatterns": ["/node_modules/", "/build/"]
   }
 }
